@@ -1,3 +1,3 @@
 # Python API Client
 
-This project is general template for API client using [request](https://docs.python-requests.org/) library
+An example for API client using python [request](https://docs.python-requests.org/) libraryy

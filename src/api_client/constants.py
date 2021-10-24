@@ -8,18 +8,6 @@ LOGGING_CONF = os.path.join(BASE_DIR, 'config/logging.json')
 
 IS_REDACT_HEADER = True # If False, didsplay Authorization header content in screen and log. 
 
-
-# Dictionary URLS 
-# key: environment name
-# value: API Host url
-URLS = {
-    'wheather_api' : 'https://weather.tsukumijima.net',
-}
-
-PATHS = {
-    'FORECAST' : '/api/forecast'
-}
-
 HTTP_STATUS_OK = 200
 HTTP_STATUS_CREATED = 201
 HTTP_STATUS_NO_CONTENT = 204

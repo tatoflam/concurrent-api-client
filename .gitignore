@@ -18,6 +18,7 @@
 
 # py.test artifacts
 __pycache__
+.pytest_cache
 
 # coverage files
 .coverage
@@ -43,3 +44,4 @@ dist/
 *.egg-info/
 build/
 MANIFEST
+.eggs/

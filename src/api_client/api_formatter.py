@@ -1,11 +1,9 @@
-from api_client.constants import URLS, PATHS
-
 class ApiFormatter:
     """ a template formatter base for building  API request
     """    
-    def __init__(self, environment=None, token=None):
-        self.host_url = URLS[environment]
-        self.paths = PATHS
+    def __init__(self, url=None, path=None, token=None):
+        self.url = url
+        self.path = path
         self.token = token
 
     def get_url(self):

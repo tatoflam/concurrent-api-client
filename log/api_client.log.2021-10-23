@@ -1,0 +1,36 @@
+2021-10-23 23:48:38,981 4448218560 DEBUG asyncio __init__ 59 Using selector: KqueueSelector
+2021-10-23 23:48:38,982 4448218560 DEBUG api_client.api_client _send 85 Requesting: POST url:"https://weather.tsukumijima.net/api/forecast", data:"{"city": "130010"}", headers:"None"
+2021-10-23 23:48:39,000 123145326354432 DEBUG urllib3.connectionpool _new_conn 971 Starting new HTTPS connection (1): weather.tsukumijima.net:443
+2021-10-23 23:48:39,053 123145326354432 DEBUG urllib3.connectionpool _make_request 452 https://weather.tsukumijima.net:443 "POST /api/forecast HTTP/1.1" 405 825
+2021-10-23 23:48:39,054 4448218560 DEBUG api_client.api_client _send 115 405
+2021-10-23 23:48:39,054 4448218560 ERROR api_client.api_client _send 136 Error Send API request. Response is not valid JSON: b'<!DOCTYPE html>\n<html>\n<head>\n    <meta charset="UTF-8" />\n    <meta name="robots" content="noindex,nofollow,noarchive" />\n    <title>An Error Occurred: Method Not Allowed</title>\n    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }\n.container { margin: 30px; max-width: 600px; }\nh1 { color: #dc3545; font-size: 24px; }\nh2 { font-size: 18px; }</style>\n</head>\n<body>\n<div class="container">\n    <h1>Oops! An Error Occurred</h1>\n    <h2>The server returned a "405 Method Not Allowed".</h2>\n\n    <p>\n        Something is broken. Please let us know what you were doing when this error occurred.\n        We will fix it as soon as possible. Sorry for any inconvenience caused.\n    </p>\n</div>\n</body>\n</html>'
+Traceback (most recent call last):
+  File "/Users/tatsuro.homma/repo/tatoflam/python_api_client/api_client/api_client.py", line 116, in _send
+    response_json = response.json()
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/site-packages/requests/models.py", line 910, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2021-10-23 23:51:51,446 4536597952 DEBUG asyncio __init__ 59 Using selector: KqueueSelector
+2021-10-23 23:51:51,447 4536597952 DEBUG api_client.api_client _send 85 Requesting: GET url:"https://weather.tsukumijima.net/api/forecast?%7B%22city%22:%20%22130010%22%7D", data:"None", headers:"None"
+2021-10-23 23:51:51,540 123145503338496 DEBUG urllib3.connectionpool _new_conn 971 Starting new HTTPS connection (1): weather.tsukumijima.net:443
+2021-10-23 23:51:51,588 123145503338496 DEBUG urllib3.connectionpool _make_request 452 https://weather.tsukumijima.net:443 "GET /api/forecast?%7B%22city%22:%20%22130010%22%7D HTTP/1.1" 404 1552
+2021-10-23 23:51:51,589 4536597952 DEBUG api_client.api_client _send 115 404
+2021-10-23 23:51:51,590 4536597952 ERROR api_client.api_client _send 136 Error Send API request. Response is not valid JSON: b'<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=device-width, initial-scale=1">\n\n        <title>Not Found</title>\n\n        <!-- Fonts -->\n        <link rel="dns-prefetch" href="//fonts.gstatic.com">\n        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">\n\n        <!-- Styles -->\n        <style>\n            html, body {\n                background-color: #fff;\n                color: #636b6f;\n                font-family: \'Nunito\', sans-serif;\n                font-weight: 100;\n                height: 100vh;\n                margin: 0;\n            }\n\n            .full-height {\n                height: 100vh;\n            }\n\n            .flex-center {\n                align-items: center;\n                display: flex;\n                justify-content: center;\n            }\n\n            .position-ref {\n                position: relative;\n            }\n\n            .code {\n                border-right: 2px solid;\n                font-size: 26px;\n                padding: 0 15px 0 15px;\n                text-align: center;\n            }\n\n            .message {\n                font-size: 18px;\n                text-align: center;\n            }\n        </style>\n    </head>\n    <body>\n        <div class="flex-center position-ref full-height">\n            <div class="code">\n                404            </div>\n\n            <div class="message" style="padding: 10px;">\n                Not Found            </div>\n        </div>\n    </body>\n</html>\n'
+Traceback (most recent call last):
+  File "/Users/tatsuro.homma/repo/tatoflam/python_api_client/api_client/api_client.py", line 116, in _send
+    response_json = response.json()
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/site-packages/requests/models.py", line 910, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/tatsuro.homma/.pyenv/versions/3.9.7/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
