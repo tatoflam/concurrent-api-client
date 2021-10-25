@@ -35,3 +35,5 @@ class WheatherApiFormatter(ApiFormatter):
 def test_weather_api():    
     apiclient = ApiClient( WheatherApiFormatter(url=URL, path=PATH, token=None, city_code=130010) )
     url, headers, params, res_json, status = apiclient.get()
+    logger.debug(json.dumps(res_json, ensure_ascii=False, indent=2))
+    logger.debug(res_json["description"]["bodyText"])
