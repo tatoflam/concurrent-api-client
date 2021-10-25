@@ -12,6 +12,7 @@
 
 # virtual env related file
 .python-version
+venv/
 
 # apple cruft
 .DS_Store

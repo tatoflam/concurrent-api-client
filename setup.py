@@ -26,6 +26,16 @@ def get_readme():
     warnings.warn("There doesn't seem to be a README in this directory.")
     return ""
 
+def parse_requirements(filename):
+    """ Given a filename, strip empty lines and those beginning with # """
+    output = []
+    with open(filename, 'r') as f:
+        for line in f:
+            sline = line.strip()
+            if sline and not line.startswith('#'):
+                output.append(sline)
+    return output
+
 setup(
     name='python_api_client',
     version='1.0',
@@ -58,9 +68,7 @@ setup(
         # eg: 'keyword1', 'keyword2', 'keyword3',
     ],
     python_requires='>=3.7',
-    install_requires=[
-        # eg: 'aspectlib==1.1.1', 'six>=1.7',
-    ],
+    install_requires=parse_requirements("requirements.txt"),
     extras_require={
         # eg:
         #   'rst': ['docutils>=0.11'],
