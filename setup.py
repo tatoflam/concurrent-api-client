@@ -3,12 +3,8 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import io
-import re
 from glob import glob
 from os.path import basename
-from os.path import dirname
-from os.path import join
 from os.path import splitext
 
 from setuptools import find_packages
@@ -36,6 +32,13 @@ def parse_requirements(filename):
                 output.append(sline)
     return output
 
+def find_modules():
+    found = []
+    for pattern in ['src/*.py']:
+#    for pattern in ['src/*.py', 'src/*.json']:
+        found.extend([splitext(basename(path))[0] for path in glob(pattern)])
+    return found
+
 setup(
     name='python_api_client',
     version='1.0',
@@ -47,7 +50,7 @@ setup(
     url='https://github.com/tatoflam/python_api_client',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
+    py_modules=find_modules(),
     include_package_data=True,
     zip_safe=False,
     classifiers=[
@@ -69,13 +72,14 @@ setup(
     ],
     python_requires='>=3.7',
     install_requires=parse_requirements("requirements.txt"),
+    tests_require=parse_requirements("requirements.testing.txt"),
     extras_require={
         # eg:
         #   'rst': ['docutils>=0.11'],
         #   ':python_version=="2.6"': ['argparse'],
     },
     setup_requires=[
-        'pytest-runner',
+        'pytest-runner', # this could cause ERROR: No matching distribution found for pytest-runner
     ],
     entry_points={
         # 'console_scripts': [
