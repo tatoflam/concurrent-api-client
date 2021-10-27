@@ -11,7 +11,7 @@ An example for API client using python [request](https://docs.python-requests.or
 ### case1: run by python venv
 
 ```bash
-$ cd python_api_client
+$ cd concurrent-api-client
 $ python -m venv venv
 $ source venv/bin/activate
 $ (venv) pytest -s # -s option returns standard output.
@@ -28,7 +28,7 @@ You can setup multiple python versions by [`pyenv`](https://github.com/pyenv/pye
 `
 
 ```bash
-$ cd python_api_client
+$ cd concurrent-api-client
 $ pyenv local 3.7.8 3.8.6 3.9.7 # you need to setup multiple versions that are relevant with `envlist` in `tox.ini`
 $ tox -r # -r option recreates virtual environment. Once you configure it, you can just run `tox` for later test. 
 ```

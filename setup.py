@@ -40,14 +40,14 @@ def find_modules():
     return found
 
 setup(
-    name='python_api_client',
-    version='1.0',
+    name='concurrent-api-client',
+    version='0.0.1',
     license='MIT',
     description='An example for API client using python request library',
     long_description="\n" + get_readme(),
     author='tatoflam',
     author_email='tatoflam@gamil.com',
-    url='https://github.com/tatoflam/python_api_client',
+    url='https://github.com/tatoflam/concurrent-api-client',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=find_modules(),
@@ -64,11 +64,11 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
     project_urls={
-#        'Changelog': 'https://github.com/tatoflam/python_api_client/blob/master/CHANGELOG.rst',
-        'Issue Tracker': 'https://github.com/tatoflam/python_api_client/issues',
+#        'Changelog': 'https://github.com/tatoflam/concurrent-api-client/blob/master/CHANGELOG.rst',
+        'Issue Tracker': 'https://github.com/tatoflam/concurrent-api-client/issues',
     },
     keywords=[
-        # eg: 'keyword1', 'keyword2', 'keyword3',
+        'request', 'API', 'REST', 'client', 'async', 'concurrent'
     ],
     python_requires='>=3.7',
     install_requires=parse_requirements("requirements.txt"),
